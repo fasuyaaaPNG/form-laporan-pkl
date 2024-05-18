@@ -1,45 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Laporan PKL</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <h1 class="judul">
-            FORM LAPORAN PKL
-        </h1>
-        <form class="content" id="pklForm" onsubmit="return validateForm()" action="https://script.google.com/macros/s/AKfycbwRdx44j0EJvxn841krOurtchizTXSeXwKN1y_FIYAq7IebA2v6RgG5nxgl2g0_ZTevjw/exec" method="post">
-            <div class="inputAtas">
-                <input type="text" class="input1 classNama" name="Nama" placeholder="Nama" id="nama" required>
-                <input type="number" class="input1 classAbsen" placeholder="Presensi" name="No_absen" id="no_absen" required>
-                <select id="Kelas" name="Kelas" class="input1 classKelas" required>
-                    <option value="" disabled selected>Kelas</option>
-                    <option value="XI SIJA 1">XIII SIJA 1</option>
-                    <option value="XI SIJA 2">XIII SIJA 2</option>
-                </select>
-            </div>
-            <div class="inputBawah">
-                <input type="text" class="input2" placeholder="Judul Laporan" name="Judul_laporan_PKL" id="judul_laporan" required>
-                <input type="url" class="input2" placeholder="Link Google Drive Laporan" name="File_laporan" id="fileLaporan" required>
-                <input type="url" class="input2" placeholder="Link Google Drive PPT Presentasi" name="File_presentasi" id="filePresentasi" required>
-                <input type="url" class="input2" placeholder="Link Google Drive Nilai" name="File_nilai" id="fileNilai" required>
-            </div>
-            <button class="submit" type="submit">
-                Submit
-            </button>
-        </form>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan PKL</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="judul">FORM LAPORAN PKL</h1>
+    <form class="content" id="pklForm" onsubmit="return validateForm()" action="https://script.google.com/macros/s/AKfycbwRdx44j0EJvxn841krOurtchizTXSeXwKN1y_FIYAq7IebA2v6RgG5nxgl2g0_ZTevjw/exec" method="post">
+        <div class="inputAtas">
+            <input type="text" class="input1 classNama" name="Nama" placeholder="Nama" id="nama" required>
+            <input type="number" class="input1 classAbsen" placeholder="Presensi" name="No_absen" id="no_absen" required>
+            <select id="Kelas" name="Kelas" class="input1 classKelas" required>
+                <option value="" disabled selected>Kelas</option>
+                <option value="XI SIJA 1">XIII SIJA 1</option>
+                <option value="XI SIJA 2">XIII SIJA 2</option>
+            </select>
+        </div>
+        <div class="inputBawah">
+            <input type="text" class="input2" placeholder="Judul Laporan" name="Judul_laporan_PKL" id="judul_laporan" required>
+            <input type="url" class="input2" placeholder="Link Google Drive Laporan" name="File_laporan" id="fileLaporan" required>
+            <input type="url" class="input2" placeholder="Link Google Drive PPT Presentasi" name="File_presentasi" id="filePresentasi" required>
+            <input type="url" class="input2" placeholder="Link Google Drive Nilai" name="File_nilai" id="fileNilai" required>
+        </div>
+        <button class="submit" type="submit">Submit</button>
+    </form>
+
     <script>
         function validateForm() {
-            var fileLaporan = document.getElementById('fileLaporan').value;
-            var filePresentasi = document.getElementById('filePresentasi').value;
-            var fileNilai = document.getElementById('fileNilai').value;
-            var googleDriveURL = "https://drive.google.com";
+            const googleDriveURL = "https://drive.google.com";
+            const fileLaporan = document.getElementById('fileLaporan').value;
+            const filePresentasi = document.getElementById('filePresentasi').value;
+            const fileNilai = document.getElementById('fileNilai').value;
 
             if (!fileLaporan.startsWith(googleDriveURL)) {
                 alert("URL Laporan harus dimulai dengan 'https://drive.google.com'");
@@ -54,13 +50,28 @@
                 return false;
             }
 
-            setTimeout(function() {
+            setTimeout(() => {
                 alert("Data berhasil dikirim");
-                window.location.href = "index.html"; 
+                window.location.href = "index.html";
             }, 1000);
 
-            window.addEventListener("DOMContentLoaded", function() { const formPkl = document.getElementById('pklForm'); formPkl.addEventListener("submit", function(e) { e.preventDefault(); const data = new FormData(formPkl); const action = e.target.action; fetch(action, { method: 'POST', body: data, }) .then(() => { window.location.replace('https://pklform.vercel.app/') }) }) }); 
             return true;
         }
+
+        window.addEventListener("DOMContentLoaded", () => {
+            const formPkl = document.getElementById('pklForm');
+            formPkl.addEventListener("submit", function (e) {
+                e.preventDefault();
+                const data = new FormData(formPkl);
+                const action = e.target.action;
+                fetch(action, {
+                    method: 'POST',
+                    body: data,
+                }).then(() => {
+                    window.location.replace('https://pklform.vercel.app/');
+                });
+            });
+        });
     </script>
+</body>
 </html>

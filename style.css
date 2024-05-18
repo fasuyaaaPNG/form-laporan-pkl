@@ -19,7 +19,7 @@ body {
     padding-bottom: 5vw;
 }
 
-.content  {
+.content {
     background-color: #FFB9C4;
     height: 78.3vh;
     position: relative;
@@ -29,17 +29,20 @@ body {
     border-top-right-radius: 9vw;
 }
 
-.input1 {
-    padding: 1.5vw 2vw 1.5vw 2vw;
+.input1, .input2 {
+    padding: 1.5vw 2vw;
     border-radius: 1vw;
     border: none;
     outline: none;
-    color: #323d67;
-    font-size: 4vw;
     font-family: "Montserrat", sans-serif;
+    font-size: 4vw;
 }
 
-input::placeholder, .input1::placeholder {
+.input1 {
+    color: #323d67;
+}
+
+.input1::placeholder, .input2::placeholder {
     color: #323d678e;
 }
 
@@ -47,15 +50,10 @@ select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-}
-
-select.classKelas {
-    background: url("./selectIcon.png")
-    no-repeat;
+    background: url("./selectIcon.png") no-repeat;
     background-color: #ffffff;
     background-size: 2.5vw;
     background-position: calc(100% - 1.5vw) 2.9vw;
-    background-repeat: no-repeat;
 }
 
 input[type="number"] {
@@ -65,8 +63,8 @@ input[type="number"] {
 }
 
 #Kelas option {
-    background-color: rgb(255, 255, 255);
-    width: 20vw !important; 
+    background-color: #fff;
+    width: 20vw !important;
     border-radius: 9vw;
     border: none;
 }
@@ -85,11 +83,10 @@ input[type="number"] {
 
 .inputAtas {
     display: flex;
-    /* border: 1px solid red; */
+    flex-direction: column;
+    align-items: flex-start;
     width: 75vw;
     gap: 4vw;
-    flex-direction: column;
-    align-items: first baseline;
     margin-left: 5vw;
     position: relative;
     top: 10vw;
@@ -101,27 +98,17 @@ input[type="number"] {
     width: 84vw;
     gap: 4vw;
     margin: auto;
-    /* border: 1px solid red; */
     margin-top: 4vw;
     margin-bottom: 2vw;
     position: relative;
     top: 10vw;
 }
 
-.input2 {
-    padding: 1.5vw 2vw 1.5vw 2vw;
-    border-radius: 1vw;
-    border: none;
-    outline: none;
-    font-family: "Montserrat", sans-serif;
-    font-size: 4vw;
-}
-
 .submit {
     background-color: transparent;
     color: #FFFFFF;
     border: 0.9vw solid white;
-    padding: 1vw 3vw 1vw 3vw;
+    padding: 1vw 3vw;
     border-radius: 7vw;
     font-size: 6vw;
     font-family: "Montserrat", sans-serif;
@@ -139,68 +126,31 @@ input[type="number"] {
     }
 
     .judul {
-        color: #CB6978;
-        font-family: "Montserrat", sans-serif;
         font-size: 1.5vw;
-        letter-spacing: 0.5vw;
-        text-align: center;
-        position: relative;
         top: -2vw;
     }
 
-    .content  {
-        background-color: #FFB9C4;
+    .content {
         height: 78.1vh;
-        padding: 2vw 3vw 2vw 3vw;
+        padding: 2vw 3vw;
         border-top-left-radius: 4vw;
         border-top-right-radius: 4vw;
         top: -3.5vw;
     }
 
-    .input1 {
-        padding: 1.5vw 2vw 1.5vw 2vw;
+    .input1, .input2 {
+        padding: 1.5vw 2vw;
         border-radius: 0.5vw;
-        border: none;
-        outline: none;
-        color: #323d67;
         font-size: 1.1vw;
-        font-family: "Montserrat", sans-serif;
     }
 
-    input::placeholder {
+    .input1::placeholder, .input2::placeholder {
         color: #323d678e;
     }
 
-    select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-    }
-
-    select.classKelas {
-        background: url("./selectIcon.png")
-        no-repeat;
-        background-color: #ffffff;
+    .select.classKelas {
         background-size: 1vw;
         background-position: calc(100% - 1.5vw) 1.7vw;
-        background-repeat: no-repeat;
-    }
-
-    input[type="number"] {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-    }
-
-    #Kelas option {
-        background-color: rgb(255, 255, 255);
-        width: 20vw !important; 
-        border-radius: 9vw;
-        border: none;
-    }
-
-    .classKelas {
-        width: 30vw;
     }
 
     .classNama {
@@ -212,51 +162,28 @@ input[type="number"] {
     }
 
     .inputAtas {
-        display: flex;
-        /* border: 1px solid red; */
-        width: 75vw;
-        margin: auto;
-        gap: 3vw;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
-        flex-direction: row;
+        gap: 3vw;
+        margin: auto;
+        width: 75vw;
         top: 0;
     }
 
     .inputBawah {
-        display: flex;
-        flex-direction: column;
         width: 75vw;
         gap: 2vw;
         margin: auto;
-        /* border: 1px solid red; */
         margin-top: 2vw;
         margin-bottom: 2vw;
         top: 0;
     }
 
-    .input2 {
-        padding: 1.5vw 2vw 1.5vw 2vw;
-        border-radius: 0.5vw;
-        border: none;
-        outline: none;
-        font-family: "Montserrat", sans-serif;
-        font-size: 1.1vw;
-        top: 0;
-    }
-
     .submit {
-        background-color: transparent;
-        color: #FFFFFF;
         border: 0.3vw solid white;
-        padding: 1vw 3vw 1vw 3vw;
-        border-radius: 7vw;
         font-size: 1vw;
-        font-family: "Montserrat", sans-serif;
-        font-weight: 700;
-        width: max-content;
-        margin: auto;
-        display: block;
+        padding: 1vw 3vw;
         top: 0;
         position: relative;
     }
