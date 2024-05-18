@@ -129,27 +129,32 @@ input[type="number"] {
     width: max-content;
     margin: auto;
     position: relative;
-    top: 50vw;
+    bottom: -26vw;
     display: block;
 }
 
 @media screen and (min-width: 1024px) {
+    * {
+        overflow: hidden;
+    }
+
     .judul {
         color: #CB6978;
         font-family: "Montserrat", sans-serif;
         font-size: 1.5vw;
         letter-spacing: 0.5vw;
         text-align: center;
-        padding-top: 2vw;
-        padding-bottom: 2vw;
+        position: relative;
+        top: -2vw;
     }
 
     .content  {
         background-color: #FFB9C4;
-        height: 77.1vh;
-        padding: 5vw 3vw 2vw 3vw;
+        height: 78.1vh;
+        padding: 2vw 3vw 2vw 3vw;
         border-top-left-radius: 4vw;
         border-top-right-radius: 4vw;
+        top: -3.5vw;
     }
 
     .input1 {
@@ -214,6 +219,8 @@ input[type="number"] {
         gap: 3vw;
         align-items: center;
         justify-content: center;
+        flex-direction: row;
+        top: 0;
     }
 
     .inputBawah {
@@ -225,6 +232,7 @@ input[type="number"] {
         /* border: 1px solid red; */
         margin-top: 2vw;
         margin-bottom: 2vw;
+        top: 0;
     }
 
     .input2 {
@@ -234,6 +242,7 @@ input[type="number"] {
         outline: none;
         font-family: "Montserrat", sans-serif;
         font-size: 1.1vw;
+        top: 0;
     }
 
     .submit {
@@ -248,5 +257,7 @@ input[type="number"] {
         width: max-content;
         margin: auto;
         display: block;
+        top: 0;
+        position: relative;
     }
 }
