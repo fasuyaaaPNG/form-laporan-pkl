@@ -248,6 +248,7 @@ input[type="number"] {
         padding: 5vw 3vw 2vw 3vw;
         border-top-left-radius: 9vw;
         border-top-right-radius: 9vw;
+        margin-bottom: 0vw;
     }
 }
 
