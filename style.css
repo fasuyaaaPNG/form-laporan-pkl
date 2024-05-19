@@ -243,9 +243,6 @@ input[type="number"] {
 }
 
 @media screen and (min-width: 1024px) {
-    * {
-        overflow: hidden;
-    }
 
     .inputTengah {
         display: flex;
@@ -259,18 +256,21 @@ input[type="number"] {
         font-size: 1.5vw;
         letter-spacing: 0.5vw;
         text-align: center;
+        height: 0vw;
         position: relative;
         top: -2vw;
     }
 
     .content  {
         background-color: #CB6978;
-        height: 78.1vh;
+        height: 72.4vh;
         padding: 2vw 3vw 2vw 3vw;
         border-top-left-radius: 4vw;
         border-top-right-radius: 4vw;
-        top: -3.5vw;
         padding-top: 3.5vw;
+        position: relative;
+        top: 0vw;
+        margin-bottom: 0vw;
     }
 
     .input1 {
